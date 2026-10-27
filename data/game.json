@@ -1,0 +1,194 @@
+{
+  "screen": {
+    "width": 390,
+    "height": 700
+  },
+  "hero": {
+    "speed": 120,
+    "hp": 100,
+    "hit_radius": 12,
+    "magnet_radius": 60,
+    "stop_distance": 12,
+    "picture": "hero.png"
+  },
+  "weapons": ["spark_wand", "spin_blades", "holy_ring"],
+  "max_weapons": 3,
+  "spark_wand": {
+    "name": "Spark Wand",
+    "short": "Spark",
+    "intro": "shoots a spark at the nearest enemy",
+    "max_level": 5,
+    "damage": 10,
+    "damage_per_level": 3,
+    "interval": 0.8,
+    "interval_shorter_per_level": 0.08,
+    "sparks": 1,
+    "extra_spark_levels": [3, 5],
+    "spark_speed": 400,
+    "spark_radius": 4,
+    "spark_life": 2.0
+  },
+  "spin_blades": {
+    "name": "Spin Blades",
+    "short": "Blades",
+    "intro": "blades circle around you",
+    "max_level": 5,
+    "blades": 2,
+    "extra_blade_levels": [2, 4],
+    "damage": 8,
+    "damage_per_level": 3,
+    "orbit_radius": 60,
+    "turn_seconds": 1.5,
+    "blade_radius": 10,
+    "hit_every": 0.5,
+    "picture": "sword.png"
+  },
+  "holy_ring": {
+    "name": "Holy Ring",
+    "short": "Ring",
+    "intro": "hurts every enemy close to you",
+    "max_level": 5,
+    "damage": 5,
+    "damage_per_level": 2,
+    "radius": 50,
+    "radius_per_level": 10,
+    "every": 0.5
+  },
+  "passive_items": {
+    "swift_boots": {
+      "name": "Swift Boots",
+      "short": "Boots",
+      "max_level": 5,
+      "speed_percent": 10
+    },
+    "big_heart": {
+      "name": "Big Heart",
+      "short": "Heart",
+      "max_level": 5,
+      "max_hp": 20,
+      "heal": 20
+    },
+    "magnet": {
+      "name": "Magnet",
+      "short": "Magnet",
+      "max_level": 5,
+      "magnet_radius": 30
+    }
+  },
+  "level_up": {
+    "cards": 3,
+    "heal": 30
+  },
+  "xp": {
+    "first": 5,
+    "more_each_level": 3
+  },
+  "gems": {
+    "speed": 300,
+    "picture_by_xp": {
+      "1": "gem_blue.png",
+      "2": "gem_pink.png"
+    }
+  },
+  "bat": {
+    "name": "Bat",
+    "hp": 8,
+    "speed": 100,
+    "damage": 5,
+    "xp": 1,
+    "hit_radius": 12,
+    "touch_every": 0.5,
+    "cull_distance": 700,
+    "picture": "bat.png"
+  },
+  "slime": {
+    "name": "Slime",
+    "hp": 30,
+    "speed": 55,
+    "damage": 8,
+    "xp": 2,
+    "hit_radius": 12,
+    "touch_every": 0.5,
+    "cull_distance": 700,
+    "picture": "slime.png"
+  },
+  "ghost": {
+    "name": "Ghost",
+    "hp": 15,
+    "speed": 135,
+    "damage": 6,
+    "xp": 2,
+    "hit_radius": 12,
+    "touch_every": 0.5,
+    "cull_distance": 700,
+    "picture": "ghost.png"
+  },
+  "demon": {
+    "name": "Demon",
+    "boss": true,
+    "hp": 800,
+    "speed": 85,
+    "damage": 20,
+    "xp": 0,
+    "hit_radius": 24,
+    "touch_every": 0.5,
+    "keep_distance": 600,
+    "picture": "demon.png",
+    "picture_scale": 2
+  },
+  "spawn": {
+    "interval": 1.0,
+    "circle_radius": 380,
+    "max_per_second": 8,
+    "max_enemies_alive": 120,
+    "waves": [
+      { "from": 0, "types": ["bat"], "min_alive": 12 },
+      { "from": 15, "types": ["bat"], "min_alive": 20 },
+      { "from": 30, "types": ["bat", "slime"], "min_alive": 28 },
+      { "from": 45, "types": ["slime", "ghost"], "min_alive": 36 },
+      { "from": 60, "types": ["bat", "ghost"], "min_alive": 45 },
+      { "from": 75, "types": ["bat", "slime", "ghost"], "min_alive": 55 },
+      { "from": 90, "types": ["bat", "slime"], "min_alive": 55, "boss": "demon" },
+      { "from": 105, "types": ["bat"], "min_alive": 75 }
+    ]
+  },
+  "length": 120,
+  "sounds": {
+    "folder": "sounds",
+    "volume": 0.5,
+    "sample_rate": 44100,
+    "files": {
+      "hit": "hit.wav",
+      "gem": "gem.wav",
+      "level": "level.wav",
+      "hurt": "hurt.wav",
+      "end": "end.wav"
+    },
+    "cooldown": {
+      "hit": 0.08,
+      "gem": 0.06,
+      "level": 0.0,
+      "hurt": 0.12,
+      "end": 0.0
+    }
+  },
+  "feel": {
+    "damage_number_seconds": 0.7,
+    "damage_number_rise": 26,
+    "death_flash_seconds": 0.15,
+    "death_flash_radius": 26,
+    "shake_seconds": 0.18,
+    "shake_pixels": 5
+  },
+  "floor": {
+    "picture": "floor.png"
+  },
+  "pictures": {
+    "folder": "assets",
+    "scale": 3,
+    "gems": [
+      { "file": "gem_blue.png", "xp": 1, "dark": [30, 80, 190], "bright": [150, 220, 255] },
+      { "file": "gem_pink.png", "xp": 2, "dark": [185, 40, 130], "bright": [255, 170, 235] }
+    ]
+  }
+}
